@@ -1,0 +1,131 @@
+/* ======================== */
+/* GAYA UMUM */
+/* ======================== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2f7acf;
+    color: #ff4949;
+}
+
+header {
+    background: #074388;
+    color: rgb(255, 255, 255);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s ease; /* Transisi untuk hover */
+}
+
+nav a:hover {
+    color: #007bff; /* Efek hover sederhana */
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('images/background.jpg') no-repeat center center/cover;
+    color: white;
+}
+
+.cta-button {
+    background-color: #fc2642;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.profile-pic {
+    width: 200px; /* Atur ukuran gambar */
+    height: 200px;
+    border-radius: 50%; /* Membuat gambar menjadi bulat */
+    object-fit: cover; /* Memastikan gambar terpotong rapi dalam lingkaran */
+    margin-bottom: 20px;
+    border: 5px solid white; /* Border awal */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ======================== */
+/* DEFINISI ANIMASI */
+/* ======================== */
+
+/* 1. Animasi Fade In */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 2. Animasi Slide Up */
+@keyframes slideUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* 3. Animasi Pulse (Berdenyut) untuk tombol CTA */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* 4. Animasi Border Grow */
+@keyframes borderGrow {
+    0% {
+        border-color: rgba(255, 255, 255, 0.3); /* Border samar */
+        transform: scale(0.95);
+    }
+    100% {
+        border-color: #007bff; /* Border berwarna */
+        transform: scale(1);
+    }
+}
+
+/* ======================== */
+/* APLIKASI ANIMASI */
+/* ======================== */
+
+.fade-in {
+    animation: fadeIn 2s ease-out forwards;
+}
+
+.slide-up {
+    /* Animasi dimulai setelah fadeIn selesai (delay 1s) */
+    animation: slideUp 1s ease-out 1s forwards; 
+    opacity: 0; /* Mulai tersembunyi */
+}
+
+.pulse {
+    /* Animasi berulang tanpa batas */
+    animation: pulse 1.5s infinite;
+    transition: background-color 0.3s;
+}
+
+.pulse:hover {
+    background-color: #0056b3; /* Efek hover saat animasi berdenyut */
+}
+
+.border-grow {
+    /* Animasi berjalan selama 1.5 detik, sekali, dan berhenti di frame terakhir */
+    animation: borderGrow 1.5s ease-out forwards;
+}
